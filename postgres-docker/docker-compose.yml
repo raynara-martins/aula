@@ -25,7 +25,7 @@ services:
     ports:
       - "5433:5433"
     volumes:
-      - shared_data:/usr/src/app/dados
+      - ./dados:/usr/src/app/dados   
     networks:
       - postgres-network
 
@@ -36,7 +36,7 @@ services:
     container_name: csv-generator-container
     restart: on-failure
     volumes:
-      - shared_data:/usr/src/app/dados
+      - ./dados:/usr/src/app/dados   
     networks:
       - postgres-network
 
@@ -46,4 +46,3 @@ networks:
 
 volumes:
   postgres_data:
-  shared_data:
